@@ -27,6 +27,7 @@ services:
     volumes:
       - ./vault-node1/data:/vault/data
       - ./certs:/vault/certs
+      - ./vault-node1/logs:/vault/logs
     cap_add:
       - IPC_LOCK
     restart: unless-stopped

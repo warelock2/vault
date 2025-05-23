@@ -22,7 +22,7 @@ the root token. This is a one-time command.
 vault operator init
 ```
 
-# Unseal the vault
+# Unseal the Vault and Enable Logging
 
 Run the following command three times, giving it one of the five unseal
 keys from the init step. You must supply a new unseal token each time.
@@ -34,13 +34,14 @@ vault operator unseal
 vault operator unseal
 vault login
 vault status
+./enable_vault_logging.sh
 ```
 
 NOTE: This will have to be done after every reboot, in order for you
 to be able to access secrets in the vault. The `vault login` step
 requires the root token from the `vault operator init` step.
 
-# Permanent VAULT_ADDR setup
+# Permanent VAULT_ADDR Setup
 
 Add the following line to your "~/.profile" startup script, so you
 don't have to run `. ./set_vault_addr.sh` before running the 
