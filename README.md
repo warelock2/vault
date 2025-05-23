@@ -5,6 +5,7 @@
 ## Initial setup
 
 ```shell
+sudo snap install vault
 ./generate-tls.sh
 ./create_vault_storage.sh
 ./setup_persistent_service.sh
