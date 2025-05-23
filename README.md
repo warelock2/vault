@@ -6,7 +6,7 @@
 
 ```shell
 sudo snap install vault
-./generate-tls.sh
+./generate_tls.sh
 ./create_vault_storage.sh
 ./setup_persistent_service.sh
 . ./set_vault_addr.sh
@@ -58,3 +58,21 @@ vault_backup.sh
 
 NOTE: Backup archive files are timestamped and stored in the "backups/"
 folder.
+
+# Import Self-signed Cert From Your Remote Vault Server
+
+Transfer the ".crt" file from the "certs/" directory to your local
+machine, then do this:
+
+```shell
+sudo cp remote_vault_server.crt /usr/local/share/ca-certificates/
+sudo update-ca-certificates
+```
+
+You can then point your VAULT_ADDR variable to your remote vault
+server and see if you can access it remotely:
+
+```shell
+export VAULT_ADDR=https://remote_vault_server:8200
+vault status
+```
