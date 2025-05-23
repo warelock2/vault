@@ -32,11 +32,13 @@ keys from the init step. You must supply a new unseal token each time.
 vault operator unseal
 vault operator unseal
 vault operator unseal
+vault login
 vault status
 ```
 
 NOTE: This will have to be done after every reboot, in order for you
-to be able to access secrets in the vault.
+to be able to access secrets in the vault. The `vault login` step
+requires the root token from the `vault operator init` step.
 
 # Permanent VAULT_ADDR setup
 
