@@ -1,0 +1,9 @@
+/home/warelock/projects/vault/vault-node1/logs/vault_audit.log {
+    daily
+    rotate 7
+    compress
+    missingok
+    notifempty
+    copytruncate
+    create 0640 100 1000
+}
