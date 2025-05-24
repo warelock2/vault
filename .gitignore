@@ -1,3 +1,4 @@
 certs/
 vault-node1/
 backups/
+*.crt
