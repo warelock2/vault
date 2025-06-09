@@ -77,3 +77,21 @@ server and see if you can access it remotely:
 export VAULT_ADDR=https://remote_vault_server:8200
 vault status
 ```
+
+# Vault Seal Monitoring
+
+```shell
+./setup_vault_monitoring.sh
+```
+
+Provide a valid VAULT_ADDR variable compatible with Vault, if asked.
+You will also be prompted to provide an "ntfy.sh"-style notification
+topic string. To get Android-style push notifications about vault
+seal/unseal operations, install the "ntfy.sh" Android app and set
+the app to the same topic you define here. You will also need to 
+manually add this to root's cron jobs, but instructions will be
+provided from the monitoring setup script on how to do that. 
+
+Event logging is recorded in `/var/log/vault_seal_monitor.log`, but
+the logging should be quite minimal, so I wouldn't bother setting up
+logrotate to manage the logs.
